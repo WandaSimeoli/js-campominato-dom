@@ -34,7 +34,7 @@
 
 // Creare un array di bombe 
 
-const bomb = 162; 
+const bomb = 16; 
 const randomNumber = [];
 
 let j = 0;
