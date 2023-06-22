@@ -1,10 +1,44 @@
 /* Reset  */
-* {
+/* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container {
-    max-width: 1170px;
+*/
+.grid-container {
+    display: flex;
     margin: 0 auto;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.start {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    background-color:turquoise;
+    color: white;
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+}
+
+.cell {
+    width: 100px;
+    padding: 20px;
+    height: 100px;
+    border: 5px solid white;
+    background-color: pink;
+    text-align: center;
+    line-height: 40px;
+    font-size: large;
+    font-weight: bold;
+    color: magenta;
+    cursor: pointer;
+}
+.bg-toggle {
+    background-color: darkturquoise;
+    color: blue;
 }
