@@ -25,15 +25,23 @@
  
      // Attivare il toggle al click
      cell.addEventListener ('click', function () {
-         cell.classList.toggle('bg-toggle');
+         cell.classList.add('bg-toggle');
          console.log(i);
 
         //  Inserire le bombe nella griglia
             if (bomb.includes(parseInt(i))) {
-                alert ('Hai perso');
+                cell.classList.add('bomb');
                 console.log('bomba');
              }
         
+             const bombclicked = document.querySelectorAll('.bomb');
+             if (bombclicked.length > 0 ) {
+
+                
+                console.log('gameover');
+
+                
+             };
      }); 
 
      }; 

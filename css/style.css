@@ -43,6 +43,7 @@
     color: blue;
 }
 
-.bombs {
+.bomb {
     background-color: red;
+    color: white;
 }
