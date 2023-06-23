@@ -5,10 +5,11 @@
 
 
 
-// Creare il click del button
+// Creare il click del button;
 
  const button = document.getElementById('click');
  button.addEventListener('click', function () {
+
      // Creare la griglia numerata 
      const gridNumber = 100; 
      for ( let i = 1; i <= gridNumber; i++ ) {
@@ -17,6 +18,7 @@
      const cell = document.createElement ('div');
      gridContainer.append(cell);
      cell.innerHTML = (i);
+
      // Aggiungere le classi 
  
      cell.classList.add('cell');
@@ -25,39 +27,41 @@
      cell.addEventListener ('click', function () {
          cell.classList.toggle('bg-toggle');
          console.log(i);
-     });
- 
-     };
- 
- }); 
 
+        //  Inserire le bombe nella griglia
+            if (bomb.includes(parseInt(i))) {
+                alert ('Hai perso');
+                console.log('bomba');
+             }
+        
+     }); 
 
-// Creare un array di bombe 
+     }; 
 
-const bomb = 16; 
-const randomNumber = [];
+       // Creare un array di bombe con numeri univoci;
+const bomb = [];
 
-let j = 0;
-while (randomNumber.length < bomb) {
+let j = 1;
+while (bomb.length < 16) {
 
-    const singleNumber = getRndInteger(1,bomb);
-    console.log(singleNumber, typeof singleNumber);
+    const randomNumber = getRndInteger(1, gridNumber);
+    console.log(randomNumber, typeof randomNumber);
 
-    if (!randomNumber.includes(singleNumber)) {
+    if (!bomb.includes(randomNumber)) {
 
-        randomNumber.push(singleNumber);
+        bomb.push(randomNumber);
     }
        j++;
     }
 
-console.log('numeri casuali', randomNumber, typeof randomNumber);
-
-
-// Funzione per generare numeri casuali
-
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min) ) + min;
-  }
+console.log('numeri casuali', bomb, typeof bomb);
+console.log('n esecuzioni', j);
+});
 
 
     
+// Funzione per generare numeri casuali
+
+ function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min  + 1) ) + min;
+   }
